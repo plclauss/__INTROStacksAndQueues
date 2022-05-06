@@ -38,7 +38,7 @@ int32_t Stack::calPoints(std::vector<std::string> &ops) {
     for (auto& it : ops) {
         if (it == "D") {
             if (!newStack.empty())
-                newStack.top() *= 2;
+                newStack.push(newStack.top() * 2);
             else
                 continue;
         }
@@ -70,9 +70,12 @@ int32_t Stack::calPoints(std::vector<std::string> &ops) {
     }
 
     int32_t sum = 0;
-    for (int i = 0; i < newStack.size(); i++) {
+    while (!newStack.empty()) {
         sum += newStack.top();
         newStack.pop();
     }
     return sum;
+}
+
+bool Stack::backspaceCompare(std::string s, std::string t) {
 }
