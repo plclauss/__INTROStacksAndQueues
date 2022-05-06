@@ -16,7 +16,7 @@ private:
 public:
     bool isValid(std::string& s);
     int32_t calPoints(std::vector<std::string>& ops);
-    bool backspaceCompare(std::string s, std::string t);
+    bool backspaceCompare(std::string& s, std::string& t);
     std::string removeOuterParenthesis(std::string s);
     std::string simplifyPath(std::string path);
 };

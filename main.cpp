@@ -4,8 +4,10 @@
 int main() {
     Stack instance;
 
-    std::vector<std::string> vec = {"5", "2", "C", "D", "+"};
-    std::cout << instance.calPoints(vec) << std::endl;
+    std::string s,t;
+    s = "y#fo##f";
+    t = "y#f#o##f";
+    std::cout << instance.backspaceCompare(s,t) << std::endl;
 
     return 0;
 }

@@ -77,5 +77,34 @@ int32_t Stack::calPoints(std::vector<std::string> &ops) {
     return sum;
 }
 
-bool Stack::backspaceCompare(std::string s, std::string t) {
+bool Stack::backspaceCompare(std::string& s, std::string& t) {
+    std::stack<char> stackStringS;
+    std::stack<char> stackStringT;
+
+    while (!s.empty()) {
+        if (s[0] == '#' && !stackStringS.empty())
+            stackStringS.pop();
+        else if (s[0] != '#')
+            stackStringS.push(s[0]);
+        s.erase(s.begin());
+    }
+
+    while (!t.empty()) {
+        if (t[0] == '#' && !stackStringT.empty())
+            stackStringT.pop();
+        else if (t[0] != '#')
+            stackStringT.push(t[0]);
+        t.erase(t.begin());
+    }
+
+    if (stackStringS.size() == stackStringT.size()) {
+        while (!stackStringS.empty()) {
+            if (stackStringS.top() != stackStringT.top())
+                return false;
+            stackStringS.pop();
+            stackStringT.pop();
+        }
+        return true;
+    }
+    return false;
 }
