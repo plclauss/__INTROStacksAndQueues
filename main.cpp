@@ -4,10 +4,8 @@
 int main() {
     Stack instance;
 
-    std::string s,t;
-    s = "y#fo##f";
-    t = "y#f#o##f";
-    std::cout << instance.backspaceCompare(s,t) << std::endl;
+    std::string s = "/a//b////c/d//././/..";
+    std::cout << instance.simplifyPath(s) << std::endl;
 
     return 0;
 }
